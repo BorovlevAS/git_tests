@@ -1,0 +1,23 @@
+name: Pre-commit
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - reopened
+      - synchronize
+    branches:
+      - master
+      - main
+      - stage
+      - dev
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Pre-commit checks
+        run: |
+          echo "Running pre-commit checks..."
+          exit 100
